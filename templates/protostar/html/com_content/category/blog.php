@@ -14,7 +14,6 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 JHtml::_('behavior.caption');
 ?>
 <div class="blog<?php echo $this->pageclass_sfx;?>">
-<h1>hello</h1>
 	<?php if ($this->params->get('show_page_heading', 1)) : ?>
 	<div class="page-header">
 		<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
@@ -62,6 +61,7 @@ JHtml::_('behavior.caption');
 	<?php
 	$introcount = (count($this->intro_items));
 	$counter = 0;
+  $title = "";
 ?>
 	<?php if (!empty($this->intro_items)) : ?>
 	<?php foreach ($this->intro_items as $key => &$item) : ?>
@@ -77,6 +77,10 @@ JHtml::_('behavior.caption');
 				<div class="item column-<?php echo $rowcount;?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>">
 					<?php
 					$this->item = &$item;
+    if ($item->category_title != $title) {
+      $title = $item->category_title;
+      echo('<h1>' . $title . '</h1>');
+    } 
 					echo $this->loadTemplate('item');
 				?>
 				</div><!-- end item -->
