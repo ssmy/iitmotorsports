@@ -1,4 +1,0 @@
-This is a file to test branching and merging.
-
-Adding a new file shouldn't make the merge very hard.
-
