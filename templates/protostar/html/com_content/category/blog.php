@@ -115,7 +115,7 @@ JHtml::_('behavior.caption');
 		</div><!-- end row -->
 			<?php endif; ?>
 	<?php endforeach; ?>
-	<?php endif; print_r($subcategories);?>
+	<?php endif; ?>
 
 	<?php if (!empty($this->link_items)) : ?>
 	<div class="items-more">
