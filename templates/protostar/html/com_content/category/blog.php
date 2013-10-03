@@ -102,7 +102,7 @@ JHtml::_('behavior.caption');
 	<?php if ($this->params->get('show_category_heading_title_text', 1) == 1) : ?>
 		<h3> <?php echo JTEXT::_('JGLOBAL_SUBCATEGORIES'); ?> </h3>
 	<?php endif; ?>
-		<?php echo $this->loadTemplate('children'); ?> </div>
+		<?php //echo $this->loadTemplate('children'); ?> </div>
 	<?php endif; ?>
 	<?php if (($this->params->def('show_pagination', 1) == 1  || ($this->params->get('show_pagination') == 2)) && ($this->pagination->get('pages.total') > 1)) : ?>
 	<div class="pagination">
