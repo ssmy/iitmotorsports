@@ -61,8 +61,33 @@ JHtml::_('behavior.caption');
 	<?php
 	$introcount = (count($this->intro_items));
 	$counter = 0;
-  $title = "";
+  $subcategory = "";
+  $subcategories = array();
+
+  // Populate subcategory list
+	if (!empty($this->intro_items)) {
+    foreach ($this->intro_items as $key => &$item) {
+      if ($item->category_title != $subcategory) {
+        $subcategory = $item->category_title;
+        $subcategories[] = $subcategory;
+      } 
+    }
+  }
+
+  // Render navbar
 ?>
+<div class="navbar" id="news_sections">
+  <div class="navbar-inner">
+    <ul class="nav">
+<?
+  foreach($subcategories as $sub) {
+    echo('<li><a href="#'.$sub.'">'.$sub.'</a></li>');
+  }
+?>
+    </ul>
+  </div>
+</div>
+
 	<?php if (!empty($this->intro_items)) : ?>
 	<?php foreach ($this->intro_items as $key => &$item) : ?>
 	<?php
@@ -77,9 +102,9 @@ JHtml::_('behavior.caption');
 				<div class="item column-<?php echo $rowcount;?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>">
 					<?php
 					$this->item = &$item;
-    if ($item->category_title != $title) {
-      $title = $item->category_title;
-      echo('<h1>' . $title . '</h1>');
+    if ($item->category_title != $subcategory) {
+      $subcategory = $item->category_title;
+      echo('<h1 id="'.$subcategory.'">'.$subcategory.'</h1>');
     } 
 					echo $this->loadTemplate('item');
 				?>
@@ -90,7 +115,7 @@ JHtml::_('behavior.caption');
 		</div><!-- end row -->
 			<?php endif; ?>
 	<?php endforeach; ?>
-	<?php endif; ?>
+	<?php endif; print_r($subcategories);?>
 
 	<?php if (!empty($this->link_items)) : ?>
 	<div class="items-more">
