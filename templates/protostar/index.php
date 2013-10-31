@@ -17,6 +17,8 @@ $doc = JFactory::getDocument();
 $this->language = $doc->language;
 $this->direction = $doc->direction;
 
+$active = JFactory::getApplication()->getMenu()->getActive();
+
 // Detecting Active Variables
 $option   = $app->input->getCmd('option', '');
 $view     = $app->input->getCmd('view', '');
@@ -138,7 +140,8 @@ else
 	. ($layout ? ' layout-' . $layout : ' no-layout')
 	. ($task ? ' task-' . $task : ' no-task')
 	. ($itemid ? ' itemid-' . $itemid : '')
-	. ($params->get('fluidContainer') ? ' fluid' : '');
+  . ($params->get('fluidContainer') ? ' fluid' : '')
+  . ' ' . $active->alias;
 ?>">
 
 	<!-- Body -->
