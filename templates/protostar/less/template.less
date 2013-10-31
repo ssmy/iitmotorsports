@@ -131,16 +131,42 @@ body.site.fluid{
 .header .finder .btn{
 	margin-top: 0px;
 }
+
+/* Homepage header */
+body.homepage .header {
+  display: none;
+}
+
 /* Nav */
 .navigation{
 	padding: 5px 0;
 	border-top: 1px solid rgba(0, 0, 0, 0.075);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.075);
 	margin-bottom: 10px;
+  display: table;
 }
 .navigation .nav-pills{
 	margin-bottom: 0;
+  width:100%;
 }
+
+.homepage .navigation {
+  width: 100%;
+}
+
+.homepage .navigation li {
+  width: 20%;
+}
+
+.homepage .navigation .nav-pills li a {
+  background-color: #fff;
+  text-align: center;
+}
+
+.homepage .navigation .nav-pills li.current a {
+  background-color: #08c;
+}
+
 /* Hero Banner Unit */
 .hero-unit{
 	background-color: #08C;
@@ -164,6 +190,11 @@ body.site.fluid{
 	-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
 	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
 }
+
+.homepage .body .container {
+  opacity: 0.6;
+}
+
 /* Wells */
 .well .page-header{
 	margin: 0px 0px 5px 0px;
