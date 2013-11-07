@@ -124,6 +124,7 @@ body.site.fluid{
 /* Header */
 .header{
 	margin-bottom: 10px;
+  display: none;
 }
 .header .finder {
 	margin-top: 14px;
@@ -132,39 +133,41 @@ body.site.fluid{
 	margin-top: 0px;
 }
 
-/* Homepage header */
-body.homepage .header {
-  display: none;
+/* Nav */
+
+#navlogo {
+  width:10%;
+  float: left;
 }
 
-/* Nav */
 .navigation{
 	padding: 5px 0;
 	border-top: 1px solid rgba(0, 0, 0, 0.075);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.075);
 	margin-bottom: 10px;
-  display: table;
+  width:100%;
 }
 .navigation .nav-pills{
 	margin-bottom: 0;
-  width:100%;
+  width:80%;
+  display: inline;
 }
 
-.homepage .navigation {
-  width: 100%;
+.navigation li {
+  width: 18%;
 }
 
-.homepage .navigation li {
-  width: 20%;
-}
-
-.homepage .navigation .nav-pills li a {
+.navigation .nav-pills li a {
   background-color: @grayLighter;
   text-align: center;
 }
 
-.homepage .navigation .nav-pills li.current a {
+.navigation .nav-pills li.current a {
   background-color: @linkColor;
+}
+
+.navbar .navbar-inner {
+  background-color: #fafafa;
 }
 
 /* Hero Banner Unit */
@@ -439,6 +442,12 @@ h6 { font-size: 12px; line-height: 14px; }
 		border-radius: 0 0 4px 4px;
 		border-bottom:1px solid @tableBorder;
 	}
+  #navlogo {
+    width: 100%;
+  }
+  .navigation li {
+    width: 100%;
+  }
 	.modal.fade {
 		top:-100%;
 	}

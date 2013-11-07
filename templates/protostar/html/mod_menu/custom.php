@@ -12,8 +12,10 @@ defined('_JEXEC') or die;
 // Note. It is important to remove spaces between elements.
 ?>
 <?php // The menu class is deprecated. Use nav instead. ?>
-<h2>test</h2>
-<ul class="nav menu<?php echo $class_sfx;?>"<?php
+<div class="navbar">
+<div class="navbar-inner">
+<img id="navlogo" src="images/logo.jpg" alt="IIT FSAE">
+<ul class="customnav nav menu<?php echo $class_sfx;?>"<?php
 	$tag = '';
 	if ($params->get('tag_id') != null)
 	{
@@ -23,7 +25,7 @@ defined('_JEXEC') or die;
 ?>>
 <?php
 foreach ($list as $i => &$item) :
-	$class = 'item-'.$item->id;
+	$class = 'dropdown item-'.$item->id;
 	if ($item->id == $active_id)
 	{
 		$class .= ' current';
@@ -74,11 +76,11 @@ foreach ($list as $i => &$item) :
 		case 'url':
 		case 'component':
 		case 'heading':
-			require JModuleHelper::getLayoutPath('mod_menu', 'default_'.$item->type);
+			require JModuleHelper::getLayoutPath('mod_menu', 'custom_'.$item->type);
 			break;
 
 		default:
-			require JModuleHelper::getLayoutPath('mod_menu', 'default_url');
+			require JModuleHelper::getLayoutPath('mod_menu', 'custom_url');
 			break;
 	endswitch;
 
@@ -98,4 +100,20 @@ foreach ($list as $i => &$item) :
 		echo '</li>';
 	}
 endforeach;
-?></ul>
+?>
+<!--
+<li class='dropdown'>
+  <a class='dropdown-toggle' data-toggle="dropdown" href="#">
+    Dropdown
+<b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <a href="#">OK</a>
+</li>
+</ul>
+</li>
+-->
+</ul>
+</div>
+</div>
