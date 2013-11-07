@@ -12,8 +12,6 @@ defined('_JEXEC') or die;
 // Note. It is important to remove spaces between elements.
 ?>
 <?php // The menu class is deprecated. Use nav instead. ?>
-<div class="navbar">
-<div class="navbar-inner">
 <img id="navlogo" src="images/logo.jpg" alt="IIT FSAE">
 <ul class="customnav nav menu<?php echo $class_sfx;?>"<?php
 	$tag = '';
@@ -101,19 +99,4 @@ foreach ($list as $i => &$item) :
 	}
 endforeach;
 ?>
-<!--
-<li class='dropdown'>
-  <a class='dropdown-toggle' data-toggle="dropdown" href="#">
-    Dropdown
-<b class="caret"></b>
-  </a>
-  <ul class="dropdown-menu">
-    <li>
-      <a href="#">OK</a>
-</li>
 </ul>
-</li>
--->
-</ul>
-</div>
-</div>
