@@ -42,11 +42,46 @@
 @linkColorHover:        darken(@linkColor, 15%);
 
 
+
 // Typography
 // -------------------------
-@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+//fonts folder is located inside the template folder
+
+.font-face(@family: futuraLT, @weight: normal, @style: normal) {
+	@font-face
+	{
+		font-family: @family;
+		src: url('../fonts/FuturaLT.ttf') format('truetype');
+		font-weight: @weight;
+		font-style: @style;
+	}
+}
+
+.font-face(@family: futuraLT, @Weight: bold, @style: normal){
+	@font-face
+	{
+		font-family: @family;
+		src: url('../fonts/FuturaLT-Bold.ttf') format('truetype');
+		font-weight: @weight;
+		font-style: @style;
+	}
+}
+.font-face(@family: futuraLT, @weight: lighter, @style:normal) {
+	@font-face
+	{
+		font-family: @family;
+		src: url('../fonts/FuturaLT-Light.ttf') format('truetype');
+		font-weight: @weight;
+		font-style: @style;
+	}
+}
+
+
+@sansFontFamily:        "futuraLT";/*, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+@serifFontFamily:       "futuraLT",Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+
 
 /* >>> JUI >>> */
 @baseFontSize:          13px;
@@ -55,7 +90,7 @@
 /* >>> JUI >>> */
 @baseLineHeight:        18px;
 /* <<< JUI <<< */
-@altFontFamily:         @serifFontFamily;
+@altFontFamily:         @sansFontFamily;
 
 @headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
 @headingsFontWeight:    bold;    // instead of browser default, bold
@@ -306,3 +341,5 @@
 @fluidGridColumnWidth768:      6.382978723%;
 @fluidGridGutterWidth768:      2.127659574%;
 /* <<< JUI <<< */
+
+
