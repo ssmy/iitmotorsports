@@ -124,7 +124,6 @@ body.site.fluid{
 /* Header */
 .header{
 	margin-bottom: 10px;
-  display: none;
 }
 .header .finder {
 	margin-top: 14px;
@@ -133,12 +132,11 @@ body.site.fluid{
 	margin-top: 0px;
 }
 
-/* Nav */
-
-#navlogo {
-  width:10%;
-  float: left;
+.headerimage {
+  height: 72px;
 }
+
+/* Nav */
 
 .navigation{
 	padding: 5px 0;
@@ -167,8 +165,16 @@ body.site.fluid{
   font-size: 22px;
 }
 
+.navigation .nav-pills li a:hover {
+  color: @grayDarker;
+  background-color: transparent;
+  border-bottom: 2px solid @grayDarker;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
 .navigation .nav-pills li.current a {
-  border-bottom: 2px solid @red;
+  border-bottom: 2px solid @accentColor;
   color: black;
   background-color: transparent;
   border-radius: 0;
@@ -223,8 +229,10 @@ h4 { font-size: 14px; line-height: 16px; }
 h5 { font-size: 13px; line-height: 15px; }
 h6 { font-size: 12px; line-height: 14px; }
 
-#title {
+h1.title {
   display: inline;
+  font-size: 34px;
+  line-height: 36px;
 }
 
 /* Module */
