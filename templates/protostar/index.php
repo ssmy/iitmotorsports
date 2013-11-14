@@ -155,7 +155,7 @@ else
 					</a>
 					<div class="header-search pull-right">
             <span class="vcenterhelper"></span>
-            <a class="" href="#"><img class="headericon" src="images/icons/rss.png" alt="RSS Feed"/></a>
+            <a class="" href="http://devel.iitmotorsports.org/index.php/news?format=feed&type=rss"><img class="headericon" src="images/icons/rss.png" alt="RSS Feed"/></a>
             <a class="" href="#"><img class="headericon" src="images/icons/facebook.png" alt="IIT FSAE Facebook"/></a>
             <a class="" href="#"><img class="headericon" src="images/icons/twitter.png" alt="FSAE Twitter"/></a>
 					</div>
