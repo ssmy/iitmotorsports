@@ -87,7 +87,7 @@
 
 /* Site Body Styles */
 body.site{
-	border-top:3px solid #0088cc;
+	border-top:3px solid @accentColor;
 	padding: 20px;
 	background-color: #f4f6f7;
 }
@@ -142,7 +142,7 @@ body.site.fluid{
 
 .navigation{
 	padding: 5px 0;
-	border-top: 1px solid rgba(0, 0, 0, 0.075);
+	/*border-top: 1px solid rgba(0, 0, 0, 0.075);*/
 	border-bottom: 1px solid rgba(0, 0, 0, 0.075);
 	margin-bottom: 10px;
   width:100%;
@@ -168,7 +168,7 @@ body.site.fluid{
 }
 
 .navigation .nav-pills li.current a {
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid @red;
   color: black;
   background-color: transparent;
   border-radius: 0;
