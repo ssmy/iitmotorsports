@@ -21,7 +21,7 @@ defined('_JEXEC') or die;
 	}
 ?>>
 <li class="title">
-<h1 id="title">IIT FSAE</h1>
+<h1 class="title">IIT FSAE</h1>
 </li>
 <?php
 foreach ($list as $i => &$item) :
