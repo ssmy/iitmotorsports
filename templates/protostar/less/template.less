@@ -91,11 +91,10 @@ body.site{
 	padding: 20px;
 	background-color: #f4f6f7;
 }
+
 body.site.homepage {
+  background: linear-gradient(to bottom, transparent, black), url(../images/home_bg.jpg) no-repeat;
   background-size: 100%;
-  background-repeat: no-repeat;
-  background-image: url(../images/background.png);
-  background-color: #1A1A1A;
 }
 
 body.site.fluid{
@@ -441,6 +440,9 @@ h1.title {
 	body {
 		padding-top: 0;
 	}
+  body.site.homepage {
+    background: linear-gradient(to bottom, transparent, black), url(../images/home_bgm.jpg) no-repeat;
+  }
 	.header {
 		background:transparent;
 	}
@@ -452,6 +454,7 @@ h1.title {
 	.header .nav.pull-right,
 	.header-search {
 		float:none;
+    clear: left;
 		display:block;
 	}
 	.header-search form {
