@@ -151,10 +151,9 @@ else
 			<header class="header" role="banner">
 				<div class="header-inner clearfix">
 					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
-						<?php echo $logo;?> <?php if ($this->params->get('sitedescription')) { echo '<div class="site-description">'. htmlspecialchars($this->params->get('sitedescription')) .'</div>'; } ?>
+            <img src="images/fsae_logo.jpg" class="headerimage pull-left" alt="IIT Formula SAE"/>
 					</a>
 					<div class="header-search pull-right">
-						<jdoc:include type="modules" name="position-0" style="none" />
 					</div>
 				</div>
 			</header>
