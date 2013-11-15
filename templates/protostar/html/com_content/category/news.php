@@ -76,46 +76,41 @@ JHtml::_('behavior.caption');
 
   // Render navbar
 ?>
-<div class="navbar" id="news_sections">
-  <div class="navbar-inner">
-    <ul class="nav">
+    <ul class="nav nav-tabs">
 <?
   foreach($subcategories as $sub) {
-    echo('<li><a href="#'.$sub.'">'.$sub.'</a></li>');
+    echo('<li><a data-toggle="tab" href="#'.str_replace(' ', '_', $sub).'">'.$sub.'</a></li>');
   }
 ?>
     </ul>
-  </div>
-</div>
+  <div class="tab-content">
 
 	<?php if (!empty($this->intro_items)) : ?>
+<?php 
+    $active = 0;
+?>
 	<?php foreach ($this->intro_items as $key => &$item) : ?>
 	<?php
 		$key = ($key - $leadingcount) + 1;
 		$rowcount = (((int) $key - 1) % (int) $this->columns) + 1;
 		$row = $counter / $this->columns;
-
-		if ($rowcount == 1) : ?>
-		<div class="items-row cols-<?php echo (int) $this->columns;?> <?php echo 'row-'.$row; ?> row-fluid clearfix">
-		<?php endif; ?>
-			<div class="span<?php echo round((12 / $this->columns));?>">
-				<div class="item column-<?php echo $rowcount;?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>">
-					<?php
-					$this->item = &$item;
+    $this->item = &$item;
     if ($item->category_title != $subcategory) {
       $subcategory = $item->category_title;
-      echo('<h1 id="'.$subcategory.'">'.$subcategory.'</h1>');
+      if ($active == 0) {
+        echo('<div class="tab-pane active" id="'.str_replace(' ', '_', $subcategory).'">');
+        $active = 1;
+      } else {
+        echo('</div>');
+        echo('<div class="tab-pane" id="'.str_replace(' ', '_', $subcategory).'">');
+      }
     } 
 					echo $this->loadTemplate('item');
 				?>
-				</div><!-- end item -->
 				<?php $counter++; ?>
-			</div><!-- end span -->
-			<?php if (($rowcount == $this->columns) or ($counter == $introcount)) : ?>
-		</div><!-- end row -->
-			<?php endif; ?>
 	<?php endforeach; ?>
 	<?php endif; ?>
+    </div>
 
 	<?php if (!empty($this->link_items)) : ?>
 	<div class="items-more">
