@@ -96,7 +96,7 @@ $(".magnify").mousemove(function(e){
 </script>
 <script type="stylesheet">
 #infograph {
-background: url(images/car_small.png) top left no-repeat;
+background: url(iitmotorsports/images/car_small.png) top left no-repeat;
 cursor: pointer;
 height: 550px;
 width: 963px
@@ -193,7 +193,7 @@ z-index: 4000
 	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85),
 		0 0 7px 7px rgba(0, 0, 0, 0.25),
 		inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
-	background: url('images/car_large.png') no-repeat;
+	background: url('iitmotorsports/images/car_large.png') no-repeat;
 	display: none;
 	cursor: none;
 	z-index: 1000;
@@ -205,5 +205,5 @@ z-index: 4000
 </script>
 <div class="magnify">
   <div class="large"></div>
-  <img class="small" src="images/car_small.png"/>
+  <img class="small" src="iitmotorsports/images/car_small.png"/>
 </div>
