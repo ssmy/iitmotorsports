@@ -21,4 +21,8 @@ $info    = $params->get('info_block_position', 0);
 JHtml::_('behavior.caption');
 
 ?>
+</div>
+</div>
+<div class="container homecontainer">
+<div class="row-fluid">
 <h1>Content goes here</h1>
